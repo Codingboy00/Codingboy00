@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>jQuery Sliding Effects</title>
+    <style>
+        body {
+            background-color: #354249;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        p {
+            max-width: 80%;
+            text-align: justify;
+            background-color: black;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        button {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        button.slide-down {
+            background-color: #c72931;
+        }
+
+        button.slide-up {
+            background-color: #303a40;
+        }
+
+        button.slide-toggle {
+            background-color: #283035;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        @media screen and (min-width: 600px) {
+            p {
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="king fisher.jpg" height="150" width="300">
+    <p>
+        In 1978, Vijay Mallya launched Kingfisher Premium beer, inspired by the defunct brand 
+        from United Breweries Group which was introduced in 1857.As the Advertising 
+        Standards Council of India banned alcohol advertisements in India, the UB Group began 
+        to promote the brand through surrogate advertisements of Kingfisher mineral water. After 
+        the group began operating Kingfisher Airlines in 2005, advertisements made their way into 
+        airplane cabins.In the United States, the company promoted the Kingfisher beer 
+        by de-ethnicizing the brand.    
+    </p>
+
+    <div class="button-container">
+        <button class="slide-down">Slide Down</button>
+        <button class="slide-up">Slide Up</button>
+        <button class="slide-toggle">Slide Toggle</button>
+    </div>
+
+    <script>
+        $("button.slide-down").click(function() {
+            $("p").slideDown(1000);
+        });
+
+        $("button.slide-up").click(function() {
+            $("p").slideUp(1000);
+        });
+
+        $("button.slide-toggle").click(function() {
+            $("p").slideToggle(1000);
+        });
+    </script>
+</body>
+</html>
